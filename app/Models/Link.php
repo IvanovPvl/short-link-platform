@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property User $user
+ * @property Stat[] $stats
  */
 class Link extends Model
 {
@@ -26,5 +27,13 @@ class Link extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function stats()
+    {
+        return $this->hasMany(Stat::class);
     }
 }
