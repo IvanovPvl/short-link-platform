@@ -7,5 +7,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::namespace('Api')->group(function () {
-    Route::post('token', 'TokenController@store');
+    Route::post('token', 'TokensController@store');
+
+    Route::middleware('auth:api')->group(function () {
+        Route::resource('links', 'LinksController');
+    });
 });

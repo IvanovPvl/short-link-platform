@@ -14,7 +14,7 @@ use App\Http\Controllers\ApiController;
  * Class TokenController
  * @package App\Http\Controllers\Api
  */
-class TokenController extends ApiController
+class TokensController extends ApiController
 {
     public function store()
     {
