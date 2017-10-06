@@ -18,11 +18,12 @@ class CreateStatsTable extends Migration
             $table->string('user_agent');
             $table->ipAddress('ip');
             $table->string('os')->default("Unknown");
-            $table->string('country_code')->nullable();
+            $table->string('country_code')->default("Unknown");
             $table->integer('link_id')->unsigned();
             $table->timestamp('created_at');
 
             $table->index('os');
+            $table->index('country_code');
 
             $table->foreign('link_id')
                 ->references('id')->on('links')
