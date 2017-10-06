@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 use App\Models\User;
 
@@ -15,6 +16,8 @@ use App\Models\User;
  */
 class ApiController extends BaseController
 {
+    use ValidatesRequests;
+
     /** @var User */
     protected $currentUser;
 
